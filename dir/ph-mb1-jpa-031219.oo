@@ -1,0 +1,44 @@
+REMARK	Two Electrode Voltage Clamp (TVEC) xenopus laevis oocyte recordings
+REMARK	Injection of 50nL hGluN1 and hGluN2 RNA
+REMARK	90 mM NaCl; 1 mM KCl; 10 mM HEPES; 1 mM BaCl2
+ASSAY	gluDRC	Glutamate Dose-Response Curve Assay; 0.1 mM EDTA 
+ASSAY	glyDRC	Glycine Dose-Response Curve Assay; 0.1 mM EDTA
+ASSAY	pH	% current in max glutamate and glycine in pH 7.6 / pH 6.8; 0.1 mM EDTA
+ASSAY	mgDRC	Magnesium Dose-Inhibition assay
+ASSAY	znDRC	Zinc Dose-Inhibition assay; 10 mM tricine
+EQUATION	1	Response = 100/(1+(10^((c-dose)*h)))
+EQUATION	2 	Response = (b+((100-b)/(1+(10^((c-dose)*h)))))
+EQUATION	3	Response = t/(1+(10^((c-dose)*h)))
+EQUATION	4	Response = (b+((t-b)/(1+(1^((c-dose)*h)))))
+COLUMN	file	glun1	glun2	i	1conc	logm10	logm9p5	logm9	logm8p5	logm8	logm7p5	logm7	logm6p5	logm6	logm5p5	logm5	logm4p5	logm4	logm3p5	logm3	log2p5	logm2	logm1p5	logm1	notes	dbinfo	logec50	hillslope	ymin	ymax	equation	conv	assay	date_inj	date_rec	vhold	coagonist	phsol	drug_id	rig	initials	experiment_info
+COLUMN	text	text	text	-nA	%	0.0000000001M	0.0000000003M	0.000000001M	0.000000003M	0.00000001M	0.00000003M	0.0000001M	0.0000003M	0.000001M	0.000003M	0.00001M	0.00003M	0.0001M	0.0003M	0.001M	0.003M	0.01M	0.03m	0.1M	text	text	float	float	float	float	cat	bool	cat	date	date	mV	text	text	text	text	text	text
+OOCYTE,ph-mb1-jpa-031219-1.1,h1a-WT,h2B-WT,37,10.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-1.2,h1a-WT,h2B-WT,185,11.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-2.1,h1a-WT,h2B-P582R,47,18.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-2.2,h1a-WT,h2B-P582R,38,26,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-3.1,h1a-WT,h2B-V914A,49,18.8,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-3.2,h1a-WT,h2B-V914A,30,11.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-4.1,h1a-WT,h2B-G603S,118,11.2,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-4.2,h1a-WT,h2B-G603S,169,13.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-5.1,h1a-WT,h2B-G603S,201,12,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-5.2,h1a-WT,h2B-G603S,254,9.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-6.1,h1a-WT,h2B-G603S,167,14.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-6.2,h1a-WT,h2B-G603S,236,12.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-7.1,h1a-WT,h2B-P553T,32,13.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-7.2,h1a-WT,h2B-P553T,32,9.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-8.1,h1a-WT,h2B-V914A,154,12.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-8.2,h1a-WT,h2B-V914A,379,10.8,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-9.1,h1a-WT,h2B-V914A,686,11.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-9.2,h1a-WT,h2B-V914A,690,12.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-10.1,h1a-WT,h2B-V914A,559,10.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-10.2,h1a-WT,h2B-V914A,528,10.8,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-11.1,h1a-WT,h2B-P582R,344,14.8,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-11.2,h1a-WT,h2B-P582R,331,12.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-12.1,h1a-WT,h2B-P582R,429,15.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-12.2,h1a-WT,h2B-P582R,345,14.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-13.1,h1a-WT,h2B-P582R,148,12.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-13.2,h1a-WT,h2B-P582R,289,11.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-14.1,h1a-WT,h2B-WT,230,12.8,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-14.2,h1a-WT,h2B-WT,671,13.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-15.1,h1a-WT,h2B-WT,561,13.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-031219-15.2,h1a-WT,h2B-WT,251,12.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-08,2019-03-12,-40,100/100 glu/gly,7.6 vs 6.8,,mb1,jpa,

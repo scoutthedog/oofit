@@ -75,6 +75,8 @@ const char* getfield(char* line, int num) {
     return NULL;
 }
 
+
+
 int oosize(char * filename) {
     FILE * stream = fopen(filename, "r");
     if (stream == NULL) {
@@ -126,76 +128,76 @@ void ooparse(char * filename, struct oorow * dptr) {
                     case 3:
                         dptr->i = strtod(token, &eptr);
                     case 4:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->sconc = strtod(token, &eptr);
                         } else {
                             dptr->sconc = NAN;
                         }
                     case 5:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm10.res = strtod(token, &eptr);
                         } else {
                             dptr->logm10.res = NAN;
                         }
                         dptr->logm10.dose = log10(0.0000000001);
                     case 6:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm9p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm9p5.res = NAN;
                         }
                         dptr->logm9p5.dose = log10(0.0000000003);
                     case 7:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm9.res = strtod(token, &eptr);
                         } else {
                             dptr->logm9.res = NAN;
                         }
                         dptr->logm9.dose = log10(0.000000001);
                     case 8:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm8p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm8p5.res = NAN;
                         }
                         dptr->logm8p5.dose = log10(0.000000003);
                     case 9:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm8.res = strtod(token, &eptr);
                         } else {
                             dptr->logm8.res = NAN;
                         }
                         dptr->logm8.dose = log10(0.00000001);
                     case 10:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm7p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm7p5.res = NAN;
                         }
                         dptr->logm7p5.dose = log10(0.00000003);
                     case 11:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm7.res = strtod(token, &eptr);
                         } else {
                             dptr->logm7.res = NAN;
                         }
                         dptr->logm7.dose = log10(0.0000001);
                     case 12:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm6p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm6p5.res = NAN;
                         }
                         dptr->logm6p5.dose = log10(0.0000003);
                     case 13:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm6.res = strtod(token, &eptr);
                         } else {
                             dptr->logm6.res = NAN;
                         }
                         dptr->logm6.dose = log10(0.000001);
                     case 14:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm5p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm5p5.res = NAN;
@@ -203,63 +205,63 @@ void ooparse(char * filename, struct oorow * dptr) {
                         dptr->logm5p5.dose = log10(0.000003);
                         
                     case 15:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm5.res = NAN;
                         }
                         dptr->logm5.dose = log10(0.00001);
                     case 16:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm4p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm4p5.res = NAN;
                         }
                         dptr->logm4p5.dose = log10(0.00003);
                     case 17:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm4.res = strtod(token, &eptr);
                         } else {
                             dptr->logm4.res = NAN;
                         }
                         dptr->logm4.dose = log10(0.0001);
                     case 18:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm3p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm3p5.res = NAN;
                         }
                         dptr->logm3p5.dose = log10(0.0003);
                     case 19:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm3.res = strtod(token, &eptr);
                         } else {
                             dptr->logm3.res = NAN;
                         }
                         dptr->logm3.dose = log10(0.001);
                     case 20:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm2p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm2p5.res = NAN;
                         }
                         dptr->logm2p5.dose = log10(0.003);
                     case 21:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm2.res = strtod(token, &eptr);
                         } else {
                             dptr->logm2.res = NAN;
                         }
                         dptr->logm2.dose = log10(0.01);
                     case 22:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm1p5.res = strtod(token, &eptr);
                         } else {
                             dptr->logm1p5.res = NAN;
                         }
                         dptr->logm1p5.dose = log10(0.03);
                     case 23:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logm1.res = strtod(token, &eptr);
                         } else {
                             dptr->logm1.res = NAN;
@@ -270,37 +272,37 @@ void ooparse(char * filename, struct oorow * dptr) {
                     case 25:
                         strcpy(dptr->dbinfo, token);
                     case 26:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->logec50 = strtod(token, &eptr);
                         } else {
                             dptr->logec50 = NAN;
                         }
                     case 27:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->hillslope = strtod(token, &eptr);
                         } else {
                             dptr->hillslope = NAN;
                         }
                     case 28:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->ymin = strtod(token, &eptr);
                         } else {
                             dptr->ymin = NAN;
                         }
                     case 29:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->ymax = strtod(token, &eptr);
                         } else {
                             dptr->ymax = NAN;
                         }
                     case 30:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->equation = strtod(token, &eptr);
                         } else {
                             dptr->equation = NAN;
                         }
                     case 31:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->conv = strtod(token, &eptr);
                         } else {
                             dptr->conv = NAN;
@@ -312,7 +314,7 @@ void ooparse(char * filename, struct oorow * dptr) {
                     case 34:
                         strcpy(dptr->date_inj, token);
                     case 35:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->vhold = strtod(token, &eptr);
                         } else {
                             dptr->vhold = NAN;
@@ -320,7 +322,7 @@ void ooparse(char * filename, struct oorow * dptr) {
                     case 36:
                         strcpy(dptr->coagonist, token);
                     case 37:
-                        if (strcmp(token, "") == 1) {
+                        if (strcmp(token, ",") > 1) {
                             dptr->phsol = strtod(token, &eptr);
                         } else {
                             dptr->phsol = NAN;
@@ -343,15 +345,4 @@ void ooparse(char * filename, struct oorow * dptr) {
     }
     fclose(stream);
 }
-/*
-int main() {
-    char * filename = "gly-mb1-jpa-031119.oo";
-    int size = oosize(filename);
-    struct oorow record[size];
-    ooparse(filename, record);
-    printf("%s\n", record[0].file);
-    printf("%s\n", record[20].assay);
-    printf("%.7g\n", record[13].logm4p5.dose);
-    //printf("%p\n", ptr);
-}
-*/
+

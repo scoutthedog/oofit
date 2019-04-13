@@ -1,0 +1,54 @@
+REMARK	Two Electrode Voltage Clamp (TVEC) xenopus laevis oocyte recordings
+REMARK	Injection of 50nL hGluN1 and hGluN2 RNA
+REMARK	90 mM NaCl; 1 mM KCl; 10 mM HEPES; 1 mM BaCl2
+ASSAY	gluDRC	Glutamate Dose-Response Curve Assay; 0.1 mM EDTA 
+ASSAY	glyDRC	Glycine Dose-Response Curve Assay; 0.1 mM EDTA
+ASSAY	pH	% current in max glutamate and glycine in pH 7.6 / pH 6.8; 0.1 mM EDTA
+ASSAY	mgDRC	Magnesium Dose-Inhibition assay
+ASSAY	znDRC	Zinc Dose-Inhibition assay; 10 mM tricine
+EQUATION	1	Response = 100/(1+(10^((c-dose)*h)))
+EQUATION	2 	Response = (b+((100-b)/(1+(10^((c-dose)*h)))))
+EQUATION	3	Response = t/(1+(10^((c-dose)*h)))
+EQUATION	4	Response = (b+((t-b)/(1+(1^((c-dose)*h)))))
+COLUMN	file	glun1	glun2	i	1conc	logm10	logm9p5	logm9	logm8p5	logm8	logm7p5	logm7	logm6p5	logm6	logm5p5	logm5	logm4p5	logm4	logm3p5	logm3	log2p5	logm2	logm1p5	logm1	notes	dbinfo	logec50	hillslope	ymin	ymax	equation	conv	assay	date_inj	date_rec	vhold	coagonist	phsol	drug_id	rig	initials	experiment_info
+COLUMN	text	text	text	-nA	%	0.0000000001M	0.0000000003M	0.000000001M	0.000000003M	0.00000001M	0.00000003M	0.0000001M	0.0000003M	0.000001M	0.000003M	0.00001M	0.00003M	0.0001M	0.0003M	0.001M	0.003M	0.01M	0.03m	0.1M	text	text	float	float	float	float	cat	bool	cat	date	date	mV	text	text	text	text	text	text
+OOCYTE,pH-mb2-sk-031519-1.1,h1a-WT,h2A-I775M,97,39.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-1.2,h1a-WT,h2A-I775M,193,35.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-2.1,h1a-WT,h2A-I775M,246,39.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-2.2,h1a-WT,h2A-I775M,242,37.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-3.1,h1a-WT,h2A-I775M,397,32.2,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-3.2,h1a-WT,h2A-I775M,740,38.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-4.1,h1a-WT,h2A-G591R,206,32.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-4.2,h1a-WT,h2A-G591R,199,32.2,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-5.1,h1a-WT,h2A-G591R,145,38,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-5.2,h1a-WT,h2A-G591R,700,30.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-6.1,h1a-WT,h2A-G591R,171,37.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-6.2,h1a-WT,h2A-G591R,317,35,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-7.1,h1a-WT,h2A-WT,110,35.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-7.2,h1a-WT,h2A-WT,374,36.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-8.1,h1a-WT,h2A-Q811P,641,22.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-8.2,h1a-WT,h2A-Q811P,602,28.8,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-9.1,h1a-WT,h2A-Q811P,217,22.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-9.2,h1a-WT,h2A-Q811P,447,23.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-10.1,h1a-WT,h2A-WT,283,37.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-10.2,h1a-WT,h2A-WT,678,33.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-11.1,h1a-WT,h2A-D776N,151,27.2,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-11.2,h1a-WT,h2A-D776N,123,26,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-12.1,h1a-WT,h2A-D776N,323,25.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-12.2,h1a-WT,h2A-D776N,978,22.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-13.1,h1a-WT,h2A-D776N,744,25.2,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-13.2,h1a-WT,h2A-D776N,552,27.8,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-14.1,h1a-WT,h2A-WT,124,34.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-14.2,h1a-WT,h2A-WT,422,42,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-15.1,h1a-WT,h2A-D675A,230,32.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-15.2,h1a-WT,h2A-D675A,428,31.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-16.1,h1a-WT,h2A-D675A,230,30.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-16.2,h1a-WT,h2A-D675A,290,30.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-17.1,h1a-WT,h2A-G744V,988,38.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-17.2,h1a-WT,h2A-G744V,510,40.5,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-18.1,h1a-WT,h2A-G744V,847,40.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-18.2,h1a-WT,h2A-G744V,647,41.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-19.1,h1a-WT,h2A-V417I,731,45,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-19.2,h1a-WT,h2A-V417I,518,38.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-20.1,h1a-WT,h2A-V417I,2034,42.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,
+OOCYTE,pH-mb2-sk-031519-20.2,h1a-WT,h2A-V417I,1324,38.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-13,2019-03-15,-40,100/100 glu/gly,7.6/6.8,,mb2,sk,

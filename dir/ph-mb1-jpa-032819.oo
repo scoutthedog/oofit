@@ -1,0 +1,36 @@
+REMARK	Two Electrode Voltage Clamp (TVEC) xenopus laevis oocyte recordings
+REMARK	Injection of 50nL hGluN1 and hGluN2 RNA
+REMARK	90 mM NaCl; 1 mM KCl; 10 mM HEPES; 1 mM BaCl2
+ASSAY	gluDRC	Glutamate Dose-Response Curve Assay; 0.1 mM EDTA 
+ASSAY	glyDRC	Glycine Dose-Response Curve Assay; 0.1 mM EDTA
+ASSAY	pH	% current in max glutamate and glycine in pH 7.6 / pH 6.8; 0.1 mM EDTA
+ASSAY	mgDRC	Magnesium Dose-Inhibition assay
+ASSAY	znDRC	Zinc Dose-Inhibition assay; 10 mM tricine
+EQUATION	1	Response = 100/(1+(10^((c-dose)*h)))
+EQUATION	2 	Response = (b+((100-b)/(1+(10^((c-dose)*h)))))
+EQUATION	3	Response = t/(1+(10^((c-dose)*h)))
+EQUATION	4	Response = (b+((t-b)/(1+(1^((c-dose)*h)))))
+COLUMN	file	glun1	glun2	i	1conc	logm10	logm9p5	logm9	logm8p5	logm8	logm7p5	logm7	logm6p5	logm6	logm5p5	logm5	logm4p5	logm4	logm3p5	logm3	log2p5	logm2	logm1p5	logm1	notes	dbinfo	logec50	hillslope	ymin	ymax	equation	conv	assay	date_inj	date_rec	vhold	coagonist	phsol	drug_id	rig	initials	experiment_info
+COLUMN	text	text	text	-nA	%	0.0000000001M	0.0000000003M	0.000000001M	0.000000003M	0.00000001M	0.00000003M	0.0000001M	0.0000003M	0.000001M	0.000003M	0.00001M	0.00003M	0.0001M	0.0003M	0.001M	0.003M	0.01M	0.03m	0.1M	text	text	float	float	float	float	cat	bool	cat	date	date	mV	text	text	text	text	text	text
+OOCYTE,ph-mb1-jpa-032819-18.1,h1a-WT,h2A-WT,1547,64.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-18.2,h1a-WT,h2A-WT,520,38.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-19.1,h1a-WT,h2A-WT,926,45,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-19.2,h1a-WT,h2A-WT,582,37.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-20.1,h1a-T123N,h2A-WT,551,42.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-20.2,h1a-T123N,h2A-WT,353,42.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-21.1,h1a-T123N,h2A-WT,234,37.9,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-21.2,h1a-T123N,h2A-WT,838,38.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-22.1,h1a-T123N,h2A-WT,243,39.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-22.2,h1a-T123N,h2A-WT,168,37.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-23.1,h1a-V644M,h2A-WT,213,88.4,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-23.2,h1a-V644M,h2A-WT,995,79.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-24.1,h1a-V644M,h2A-WT,76,91.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-24.2,h1a-V644M,h2A-WT,675,76.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-25.1,h1a-V644M,h2A-WT,660,74.6,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-25.2,h1a-V644M,h2A-WT,417,85.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-26.1,h1a-V644M,h2A-WT,572,85.7,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-26.2,h1a-Y647C,h2A-WT,,,,,,,,,,,,,,,,,,,,,,ran out of time to finish experiment, use data from 3/29 recording for this variant,DEL,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-27.1,h1a-Y647C,h2A-WT,,,,,,,,,,,,,,,,,,,,,,ran out of time to finish experiment, use data from 3/29 recording for this variant,DEL,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-27.2,h1a-Y647C,h2A-WT,,,,,,,,,,,,,,,,,,,,,,ran out of time to finish experiment, use data from 3/29 recording for this variant,DEL,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-28.1,h1a-WT,h2A-WT,414,42.3,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
+OOCYTE,ph-mb1-jpa-032819-28.2,h1a-WT,h2A-WT,1156,49,,,,,,,,,,,,,,,,,,,,,,,,,,,,pH,2019-03-27,2019-03-28,-40,100/100 glu/gly,7.6vs6.8,,mb1,jpa,
