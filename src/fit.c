@@ -104,7 +104,7 @@ static double ec50est(double * res, double * dose, int n /*size*/) {
     // well enough for data where finding the EC50 value
     // is reasonably possible
     int i;
-    double d50[n];
+    double d50[10]; //arbitrary size
     for (i=0; i<n; ++i) {
       d50[i] = abs(*(res + i) -  50.0);
     }
@@ -148,7 +148,7 @@ double * fit1 (double * res, double * dose, int n, double *lb, double *ub, doubl
     // keeps ymin set to 0 and ymax set to 100
     // you can specify your own lower and upper bounds
     int m=2;
-    double p[m];
+    double p[2];
      double opts[LM_OPTS_SZ], info[LM_INFO_SZ];
     opts[0]=LM_INIT_MU; opts[1]=1E-15; opts[2]=1E-15; opts[3]=1E-20;
     opts[4]=LM_DIFF_DELTA; // for finite differences
@@ -167,7 +167,7 @@ double * fit1d (double * res, double * dose, int n, double * ret_arr) {
 }
 double * fit2 (double * res, double *dose, int n, double *lb, double *ub, double * ret_arr) {
     int m=3;
-    double p[m];
+    double p[3];
     double opts[LM_OPTS_SZ], info[LM_INFO_SZ];
     opts[0]=LM_INIT_MU; opts[1]=1E-15; opts[2]=1E-15; opts[3]=1E-20;
     opts[4]=LM_DIFF_DELTA; // for finite differences
@@ -186,7 +186,7 @@ double * fit2d (double * res, double * dose, int n, double * ret_arr) {
 }
 double * fit3 (double * res, double *dose, int n, double *lb, double *ub, double * ret_arr) {
     int m=3;
-    double p[m];
+    double p[3];
     double opts[LM_OPTS_SZ], info[LM_INFO_SZ];
     opts[0]=LM_INIT_MU; opts[1]=1E-15; opts[2]=1E-15; opts[3]=1E-20;
     opts[4]=LM_DIFF_DELTA; // for finite differences
@@ -205,7 +205,7 @@ double * fit3d (double * res, double * dose, int n, double * ret_arr) {
 }
 double * fit4 (double * res, double *dose, int n, double *lb, double *ub, double * ret_arr) {
     int m=4;
-    double p[m];
+    double p[4];
     double opts[LM_OPTS_SZ], info[LM_INFO_SZ];
     opts[0]=LM_INIT_MU; opts[1]=1E-15; opts[2]=1E-15; opts[3]=1E-20;
     opts[4]=LM_DIFF_DELTA; // for finite differences

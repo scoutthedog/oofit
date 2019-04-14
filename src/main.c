@@ -20,8 +20,8 @@ void fitstruct (struct oorow * record, int size, int parameter) {
     for (i=0;i<size;i++) {
         int n = ooarrsize(&record[i]);
         // define the arrays based on the size
-        double dose_arr[n];
-        double res_arr[n];
+        double dose_arr[10]; //arbitrary size
+        double res_arr[10]; //
         ootoarr(&record[i], res_arr, dose_arr, n);
         // debugging
         /*
@@ -85,7 +85,8 @@ int main() {
         }
     }
     rewinddir(dir);
-    struct hash dhash[fcount];
+    struct hash * dhash = malloc(fcount * sizeof(struct hash));
+    struct hash * ptr = dhash;
     int i = 0;
     char dirstr[8] = "../dir/";
     while ((ent = readdir (dir)) != NULL) {
@@ -93,14 +94,15 @@ int main() {
             continue;
         } else {
             //printf("%s \n", ent->d_name);
-            dhash[i].key = i;
-            strcpy(dhash[i].value, dirstr);
-            strcat(dhash[i].value, ent->d_name);
+            ptr->key = i;
+            strcpy(ptr->value, dirstr);
+            strcat(ptr->value, ent->d_name);
             printf("%-5d : %-20s\n", i, ent->d_name);
-            i++;
+            i++; ptr++;
         }
     }
     closedir(dir);
+    free(dhash);
     int fint;
     int result = scanf("%d", &fint);
     if (result == EOF) {
@@ -127,7 +129,7 @@ int main() {
     // find the size of the file in rows
     int size = oosize(fname);
     // define the structure based on the size
-    struct oorow record[size];
+    struct oorow * record = malloc(size * sizeof(struct oorow)); 
     // fill the structure with data
     ooparse(fname, record);
 
@@ -159,5 +161,6 @@ int main() {
         printf("| %-20s | %-7.3g | %-5.3g | %-5.3g | %-5.3g |\n", construct, record[i].logec50, record[i].hillslope, record[i].ymin, record[i].ymax);
     }
     printf("==========================================================\n");
+    free(record);
     return 0;
 }
