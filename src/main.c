@@ -7,6 +7,11 @@
 
 #include "oofit.h"
 
+struct hash {
+    int key;
+    char value[50];
+};
+
 void fitstruct (struct oorow * record, int size, int parameter) {
     //fitting
     // figure out the number of concentrations of the recording
@@ -64,70 +69,67 @@ int main() {
     printf("| oofit v 1.0 written by James Allen for sftlab & CFERV |\n");
     printf("|=======================================================|\n");
     // get the filename
-    int max = 20;
-    char* name = (char*) malloc(max); /* allocate buffer */
-    if (name == 0) quitfile();
     printf("To get started, please choose a file.\n");
     printf("Below are the loaded .oo files:\n");
     printf("------------------------------\n");
-    DIR *dir;
-    struct dirent *ent;
-    if ((dir = opendir ("../dir")) != NULL) {
-    /* print all the files and directories within directory */
+    DIR * dir;
+    struct dirent * ent;
+    dir = opendir("../dir");
     int fcount = 0;
     while ((ent = readdir (dir)) != NULL) {
         if (strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0) {
             continue;
         } else {
-            printf ("%-4d : %s\n", fcount, ent->d_name);
+            //printf("%s \n", ent->d_name);
             fcount++;
         }
     }
-    closedir (dir);
-    } else {
-        /* could not open directory */
-        perror ("");
-        return EXIT_FAILURE;
-    }
-    while (1) { /* skip leading whitespace */
-        int c = getchar();
-        if (c == EOF) break; /* end of file */
-        if (!isspace(c)) {
-             ungetc(c, stdin);
-             break;
-        }
-    }
-
+    rewinddir(dir);
+    struct hash dhash[fcount];
     int i = 0;
-    while (1) {
-        int c = getchar();
-        if (isspace(c) || c == EOF) { /* at end, add terminating zero */
-            name[i] = 0;
-            break;
+    char dirstr[8] = "../dir/";
+    while ((ent = readdir (dir)) != NULL) {
+        if (strcmp(ent->d_name, ".") == 0 || strcmp(ent->d_name, "..") == 0) {
+            continue;
+        } else {
+            //printf("%s \n", ent->d_name);
+            dhash[i].key = i;
+            strcpy(dhash[i].value, dirstr);
+            strcat(dhash[i].value, ent->d_name);
+            printf("%-5d : %-20s\n", i, ent->d_name);
+            i++;
         }
-        name[i] = c;
-        if (i == max - 1) { /* buffer full */
-            max += max;
-            name = (char*) realloc(name, max); /* get a new and larger buffer */
-            if (name == 0) quitfile();
+    }
+    closedir(dir);
+    int fint;
+    int result = scanf("%d", &fint);
+    if (result == EOF) {
+    /* ... you're not going to get any input ... */
+    }
+    if (result == 0) {
+        while (fgetc(stdin) != '\n');
+    }
+    char fname[50];
+    for (i=0; i<fcount; i++) {
+        if (fint == dhash[i].key) {
+            strcpy(fname, dhash[i].value);
+            printf("%s\n", fname);
         }
-        i++;
     }
     FILE * file;
-    file = fopen(name, "r");
+    file = fopen(fname, "r");
     if (file){
         fclose(file);
         printf("Parsing your file...");
     }else{
-        free(name);
         quitfile();
     }
     // find the size of the file in rows
-    int size = oosize(name);
+    int size = oosize(fname);
     // define the structure based on the size
     struct oorow record[size];
     // fill the structure with data
-    ooparse(name, record);
+    ooparse(fname, record);
 
     int param;
     printf("Please enter an INTEGER parameter setting. Options below:\n");
@@ -136,7 +138,7 @@ int main() {
     printf("3 = BOTTOM constrained to 0, TOP unconstrained\n");
     printf("4 = BOTTOM unconstrained,    TOP unconstrained\n");
     printf("Equation: ");
-    int result = scanf("%d", &param);
+    result = scanf("%d", &param);
 
     if (result == EOF) {
     /* ... you're not going to get any input ... */
@@ -157,6 +159,5 @@ int main() {
         printf("| %-20s | %-7.3g | %-5.3g | %-5.3g | %-5.3g |\n", construct, record[i].logec50, record[i].hillslope, record[i].ymin, record[i].ymax);
     }
     printf("==========================================================\n");
-    free(name);
     return 0;
 }
